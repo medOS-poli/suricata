@@ -2,3 +2,4 @@ Express supports the following routing methods that correspond to HTTP methods: 
 
 
 https://expressjs.com/en/guide/routing.html
+https://expressjs.com/en/4x/api.html#res.send
