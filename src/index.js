@@ -100,15 +100,16 @@ app.get('/file/:name', function (req, res, next) {
 
 /*GET*/
 
-app.get('/API/product/', (req,res)=> //returns all products
+app.get('/API/product/:amount', (req,res)=> //returns all products
 {
+    let amount = parseInt(req.params.amount);
     Product.find({},(err,products) =>
     {
         if(err) return res.status(500).send({Error: `${err}`});
         if(!products)  return res.status(404).send({Error: `Not Products: ${err}`});
                  
         res.status(200).send({products});
-    });
+    }).limit(amount);
      
 });
 
